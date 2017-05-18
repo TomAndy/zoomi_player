@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170518 14:27:21.630" generator="Robot 3.0.2 (Python 2.7.8 on win32)">
+<suite source="D:\My\Projects\Zoomi\autotests\tests\robot_tests\tests.robot" id="s1" name="Tests">
+<kw type="setup" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170518 14:27:21.768" starttime="20170518 14:27:21.768"></status>
+</kw>
+<test id="s1-t1" name="User can log in">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20170518 14:27:21.769" level="INFO">Opening browser 'firefox' to base url 'https://player-v2.dev.zoomiinc.com/'</msg>
+<status status="PASS" endtime="20170518 14:27:35.125" starttime="20170518 14:27:21.769"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>auth-email</arg>
+</arguments>
+<status status="PASS" endtime="20170518 14:27:35.146" starttime="20170518 14:27:35.125"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>auth-email</arg>
+<arg>${EMAIL}</arg>
+</arguments>
+<msg timestamp="20170518 14:27:35.147" level="INFO">Typing text 'tombelak30@gmail.com' into text field 'auth-email'</msg>
+<status status="PASS" endtime="20170518 14:27:35.310" starttime="20170518 14:27:35.147"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>auth-password</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20170518 14:27:35.311" level="INFO">Typing password into text field 'auth-password'</msg>
+<status status="PASS" endtime="20170518 14:27:35.386" starttime="20170518 14:27:35.310"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>auth-sign-in</arg>
+</arguments>
+<msg timestamp="20170518 14:27:35.387" level="INFO">Clicking button 'auth-sign-in'.</msg>
+<status status="PASS" endtime="20170518 14:27:35.442" starttime="20170518 14:27:35.386"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>container-course</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20170518 14:27:44.325" starttime="20170518 14:27:35.442"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${current_url}</var>
+</assign>
+<msg timestamp="20170518 14:27:44.331" level="INFO">${current_url} = https://player-v2.dev.zoomiinc.com/#course</msg>
+<status status="PASS" endtime="20170518 14:27:44.331" starttime="20170518 14:27:44.325"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${current_url}</arg>
+<arg>${URL_AFTER_LOGIN}</arg>
+</arguments>
+<status status="PASS" endtime="20170518 14:27:44.331" starttime="20170518 14:27:44.331"></status>
+</kw>
+<status status="PASS" endtime="20170518 14:27:44.331" critical="yes" starttime="20170518 14:27:21.768"></status>
+</test>
+<status status="PASS" endtime="20170518 14:27:44.332" starttime="20170518 14:27:21.632"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
