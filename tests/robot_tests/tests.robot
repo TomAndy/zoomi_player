@@ -28,11 +28,16 @@ User can log in
     input text      auth-email    ${EMAIL}
     input password  auth-password    ${PASSWORD}
     click button    auth-sign-in
-    wait until page contains element  container-course  20s
+    wait until page contains element  container-course  40s
     ${current_url}=     get location
     should be equal  ${current_url}     ${URL_AFTER_LOGIN}
-
-#    close browser
+    maximize browser window
+    wait until page contains element  xpath=//div[contains(text(), 'Tom')]    40s
+    click element  xpath=//div[contains(text(), 'Tom')]
+    wait until page contains element  xpath=.//*[@id='user-menu']/div/div[2]
+    click element  xpath=.//*[@id='user-menu']/div/div[2]
+    wait until page contains element  auth-email    40s
+    close browser
 
 
 
